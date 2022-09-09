@@ -1,0 +1,292 @@
+:root {
+    --purple: #EA40A4;
+    --blue: #3A82EE;
+    --orange: #FF7000;
+    --green: #00FF00;
+
+    --dark: #313154;
+    --gray: #929292;
+    --noDone: #FF3333;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --bgColor: #02111e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: .4s all ease;
+}
+
+body {
+    background: var(--bgColor);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameDiv {
+    width: 320px;
+    height: 320px;
+    border-radius: 0px;
+    overflow: hidden;
+
+    border-left: 10px solid var(--green);
+    border-right: 10px solid var(--purple);
+    border-top: 10px solid var(--orange);
+    border-bottom: 10px solid var(--blue);
+
+    box-shadow: 0 0 20px var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.winText {
+    color: var(--noDone);
+}
+
+.line_div {
+    width: 106px;
+    height: 124px;
+    background-image: url(img/blue-Tank.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.line {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: var(--blue);
+    /* box-shadow: 0 0 5px solid var(--blue); */
+    border-radius: 50%;
+    z-index: 10;
+    background-image: url(img/blue-Gun.png);
+}
+.line_child {
+    content: "";
+    width: 43px;
+    height: 124px;
+    background-image: url(img/lula.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.pulya {
+    width: 10px;
+    height: 21px;
+    background-image: url(img/pulya.png);
+    margin-left: 3px;
+    position: relative;
+    animation: pulya .3s 1;
+}
+.fire {
+    height: 26px;
+    width: 18px;
+    background-image: url(img/fire.png);
+    position: relative;
+    top: 20px;
+}
+@keyframes pulya {
+    0% {
+        opacity: 1;
+        top: 50px;
+    }
+    100% {
+        opacity: 1;
+        top: 130px;
+        
+    }
+}
+.anim {
+    animation: rotate 5s linear infinite;
+}
+
+.animation {
+    animation: divRotateEasy 5s linear infinite;
+}
+
+.animNoLinear {
+    animation: divRotate 2s infinite;
+}
+
+.info_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--noDone);
+    font-size: 28px;
+
+    animation: divUp 3s 1;
+}
+.gameAnim {
+    animation: divGame 3s 1;
+}
+
+.best_result span {
+    font-weight: bold;
+    color: white;
+}
+
+.level span {
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes divRotateEasy {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes divRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes divGame {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes divGame2 {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes divUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn_go {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--noDone);
+    color: #02111e;
+    font-size: 18px;
+    box-shadow: 0 0 20px var(--dark);
+
+    animation: divUp 3s 1;
+    z-index: 100;
+
+}
+
+.btn_go:hover {
+    background:var(--orange);
+}
+
+.btn_stop {
+    background: var(--blue);
+    color: white;
+}
+.btn_stop:hover {
+    background:var(--purple);
+}
+.lose_text {
+    color:var(--noDone);
+    font-size: 70px;
+    background:var(--bgColor);
+    box-shadow: 0 0 20px var(--noDone);
+    padding: 0 15px;
+    border-radius: 10px;
+}
+.lose_div {
+    position: absolute;
+    top: 45%;
+    z-index: 20;
+    animation: divGame .8s 1;
+}
+.timer_num {
+    color: var(--noDone);
+    font-size: 130px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 20px var(--noDone);
+    animation: textAnim 1s 1;
+}
+
+.nums_timer {
+    position: absolute;
+    /* top: 38%; */
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.anim_lose {
+    animation: divGame2 .8s 1;
+}
+body {
+    overflow: hidden;
+}
+
+@keyframes textAnim {
+    0% {
+        opacity: 0;
+        font-size: 50px;
+    }
+    100% {
+        opacity: 1;
+        font-size: 130px;
+    }
+}

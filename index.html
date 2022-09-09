@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>JS Game</title>
+</head>
+
+<body>
+    <!-- <span class="test">asdadasd</span> -->
+    <div class="container">
+        <div class="info_div">
+            <span class="best_result">Best result: <span>0</span></span>
+            <span class="level">Level: <span>1</span></span>
+        </div>
+        <div class="gameDiv gameAnim">
+            <div class="nums_timer">
+                <span class="timer_num" hidden>3</span>
+                <span class="timer_num" hidden>2</span>
+                <span class="timer_num" hidden>1</span>
+            </div>
+            <div class="lose_div" hidden>
+                <span class="lose_text">You lose!</span>
+            </div>
+            <!-- <div class="line">
+                <div class="line_child"></div>
+            </div> -->
+            <div class="line_div">
+                <div class="line" value = 'blue'>
+                    <div class="line_child">
+                        <div class="pulya" hidden></div>
+                        <div class="fire" hidden></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn_go">Go again!</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
